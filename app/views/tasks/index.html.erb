@@ -4,6 +4,9 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= task.title %></li>
+    <li>
+      <%= task.title %>
+      <%= button_to 'destroy', task_path(task), method: :delete %>
+    </li>
   <% end %>
 </ul>

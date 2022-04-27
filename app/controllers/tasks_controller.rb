@@ -13,6 +13,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    redirect_to root_path, notice: 'task successfully destroyed'
+  end
+
   private
 
   def task_params
