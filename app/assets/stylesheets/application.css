@@ -20,6 +20,15 @@
   flex-direction: row;
 }
 
+.margin-x {
+  margin: 0 .5em;
+}
+
+.margin-r {
+  margin-right: .5em;
+}
+
+
 /* NAVBAR */
 .navbar {
   text-transform: uppercase;
@@ -31,6 +40,8 @@
 
 .title {
   font-weight: bold;
+  text-decoration: none;
+  color: white;
 }
 
 .description {
@@ -40,7 +51,6 @@
 .nav-link {
   text-decoration: none;
   color: white;
-  margin-left: 1em;
 
   transition: color .3s ease-in .1s;
 }
