@@ -41,6 +41,10 @@ h2 {
   margin-right: .5em;
 }
 
+.margin-y {
+  margin: 2em 0;
+}
+
 /* NAVBAR */
 .navbar {
   text-transform: uppercase;
@@ -180,4 +184,16 @@ h2 {
   background-color: #e74c3c;
   border-color: #c0392b;
   color: white;
+}
+
+/* Home and About */
+
+.info {
+  height: 150px;
+  margin: 0 auto;
+  width: 70%;
+  padding: 2em;
+  color: white;
+  background-color: #222;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
 }
