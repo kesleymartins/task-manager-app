@@ -1,6 +1,7 @@
-<%= form_with(model: Task.new) do |f| %>
-  <%= f.label :title  %>
-  <%= f.text_field :title %>
+<div class="form d-row">
+  <%= form_with(model: Task.new) do |f| %>
+    <%= f.text_field :title, placeholder: 'Task name', class: 'text-field' %>
 
-  <%= f.submit 'Create Task' %>
-<% end %>
+    <%= f.submit 'Create Task', class: 'create-btn' %>
+  <% end %>
+</div>
