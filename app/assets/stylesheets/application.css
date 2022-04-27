@@ -210,3 +210,7 @@ h2 {
 .alert {
   background-color: #c0392b;
 }
+
+.no-tasks {
+  background-color: #2980b9;
+}
