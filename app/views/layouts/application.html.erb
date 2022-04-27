@@ -12,6 +12,22 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <%= yield %>
+
+    <div class="container">
+
+      <% if flash.notice %>
+        <div class="flash-message notice">
+          <%= flash.notice %>
+        </div>
+      <% end %>
+
+      <% if flash.alert %>
+        <div class="flash-message alert">
+          <%= flash.alert %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
