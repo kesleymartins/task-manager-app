@@ -8,9 +8,9 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to root_path, notice: 'task successfully created'
+      redirect_to tasks_path, notice: 'task successfully created'
     else
-      redirect_to root_path, alert: 'an error occurred while creating the task'
+      redirect_to tasks_path, alert: 'an error occurred while creating the task'
     end
   end
 
@@ -18,7 +18,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
 
-    redirect_to root_path, notice: 'task successfully destroyed'
+    redirect_to tasks_path, notice: 'task successfully destroyed'
   end
 
   def complete
@@ -26,9 +26,9 @@ class TasksController < ApplicationController
     @task.done = true
 
     if @task.save
-      redirect_to root_path, notice: 'task completed'
+      redirect_to tasks_path, notice: 'task completed'
     else
-      redirect_to root_path, alert: 'it was not possible to complete the task'
+      redirect_to tasks_path, alert: 'it was not possible to complete the task'
     end
   end
 
