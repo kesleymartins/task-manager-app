@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @completed_tasks = Task.all.completed
+    @uncompleted_tasks = Task.all.uncompleted
   end
 
   def create
@@ -18,6 +19,17 @@ class TasksController < ApplicationController
     @task.destroy
 
     redirect_to root_path, notice: 'task successfully destroyed'
+  end
+
+  def complete
+    @task = Task.find(params[:id])
+    @task.done = true
+
+    if @task.save
+      redirect_to root_path, notice: 'task completed'
+    else
+      redirect_to root_path, alert: 'it was not possible to complete the task'
+    end
   end
 
   private

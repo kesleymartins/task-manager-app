@@ -3,7 +3,17 @@
 <%= render 'form' %>
 
 <ul>
-  <% @tasks.each do |task| %>
+  <% @uncompleted_tasks.each do |task| %>
+    <li>
+      <%= task.title %>
+      <%= button_to 'complete', complete_task_path(task), method: :put %>
+      <%= button_to 'destroy', task_path(task), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @completed_tasks.each do |task| %>
     <li>
       <%= task.title %>
       <%= button_to 'destroy', task_path(task), method: :delete %>
