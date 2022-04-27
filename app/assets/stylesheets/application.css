@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+/* General Purpose  */
+.d-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* NAVBAR */
+.navbar {
+  text-transform: uppercase;
+  background-color: #222222;
+  width: 100%;
+  padding: 1em;
+  color: white;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  color: #ea4f4c;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  margin-left: 1em;
+
+  transition: color .3s ease-in .1s;
+}
+
+.nav-link:hover {
+  color: #ea4f4c;
+}
