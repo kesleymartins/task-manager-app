@@ -14,13 +14,7 @@
       <h2 class="tasks-title">Uncompleted</h2>
       <ul>
         <% @uncompleted_tasks.each do |task| %>
-          <li class="task">
-            <%= task.title %>
-            <section class="actions">
-              <%= button_to 'complete', complete_task_path(task), method: :put, class: 'complete-btn margin-x' %>
-              <%= button_to 'destroy', task_path(task), method: :delete, class: 'destroy-btn margin-x' %>
-            </section>
-          </li>
+          <%= render 'task', task: task %>
         <% end %>
       </ul>
     </section>
@@ -29,12 +23,7 @@
       <h2 class="tasks-title">Completed</h2>
       <ul>
         <% @completed_tasks.each do |task| %>
-          <li class="task">
-            <%= task.title %>
-            <section class="actions">
-              <%= button_to 'destroy', task_path(task), method: :delete, class: 'destroy-btn margin-x' %>
-            </section>
-          </li>
+          <%= render 'task', task: task %>
         <% end %>
       </ul>
     </section>

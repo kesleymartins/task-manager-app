@@ -1,0 +1,7 @@
+<li class="task">
+  <%= task.title %>
+  <section class="actions">
+    <%= button_to 'complete', complete_task_path(task), method: :put, class: 'complete-btn margin-x'  unless task.done %>
+    <%= button_to 'destroy', task_path(task), method: :delete, class: 'destroy-btn margin-x' %>
+  </section>
+</li>
