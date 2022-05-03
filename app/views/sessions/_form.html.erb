@@ -1,0 +1,15 @@
+<div class="form d-row">
+  <%= form_with(url: login_user_path, method: :post) do |form| %>
+    <div>
+      <%= form.text_field :email, placeholder: :email, class: 'text-field' %>
+    </div>
+
+    <div>
+      <%= form.password_field :password, placeholder: :password, class: 'text-field' %>
+    </div>
+
+    <div>
+      <%= form.submit "Login", class: 'create-btn margin-x' %>
+    </div>
+  <% end %>
+</div>

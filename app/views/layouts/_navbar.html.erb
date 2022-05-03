@@ -3,10 +3,21 @@
     <%= link_to 'Task Manager', root_path, class: 'title' %>
     <span class="description margin-r">App</span>
   </div>
-  <div>
-    <ul class="d-row">
-      <li><%= link_to "Tasks", tasks_path, class: 'nav-link margin-x' %></li>
-      <li><%= link_to "About", about_path, class: 'nav-link margin-x' %></li>
-    </ul>
+  <div class="d-row">
+      <ul class="d-row">
+        <% if current_user %>
+          <li><%= link_to "Tasks", tasks_path, class: 'nav-link margin-x' %></li>
+        <% end %>
+        <li><%= link_to "About", about_path, class: 'nav-link margin-x' %></li>
+      </ul>
+      <ul class="d-row">
+        <% if current_user %>
+          <li><%= current_user.email %></li>
+          <li><%= button_to 'Log out', logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Create account", new_user_path, class: 'nav-link' %></li>
+          <li><%= link_to "Log in", login_path, class: 'nav-link' %></li>
+        <% end %>
+      </ul>
   </div>
 </nav>
