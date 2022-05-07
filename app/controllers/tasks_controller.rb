@@ -2,12 +2,13 @@ class TasksController < ApplicationController
   before_action :require_login
   
   def index
-    @completed_tasks = Task.all.completed
-    @uncompleted_tasks = Task.all.uncompleted
+    @completed_tasks = Task.all.by_user(current_user).completed
+    @uncompleted_tasks = Task.all.by_user(current_user).uncompleted
   end
 
   def create
     @task = Task.new(task_params)
+    @task.user = current_user
 
     if @task.save
       redirect_to tasks_path, notice: 'task successfully created'
