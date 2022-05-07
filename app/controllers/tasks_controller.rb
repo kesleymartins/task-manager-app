@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :require_login
+  
   def index
     @completed_tasks = Task.all.completed
     @uncompleted_tasks = Task.all.uncompleted
