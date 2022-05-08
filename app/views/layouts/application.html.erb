@@ -7,27 +7,30 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css" %>
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "application" %>  
+    <%= stylesheet_link_tag "helpers/margin" %>  
+    <%= stylesheet_link_tag "helpers/flex" %>  
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <header>
+      <%= render 'layouts/navbar' %>
+    </header>
 
-    <div class="container">
+    <main class="container">
+      <section>
+        <% if flash.notice %>
+          <div class="flashmessage notice mb-1"><%= flash.notice %></div>
+        <% end %>
 
-      <% if flash.notice %>
-        <div class="flash-message notice">
-          <%= flash.notice %>
-        </div>
-      <% end %>
+        <% if flash.alert %>
+          <div class="flashmessage alert mb-1"><%= flash.alert %></div>
+        <% end %>
+      </section>
 
-      <% if flash.alert %>
-        <div class="flash-message alert">
-          <%= flash.alert %>
-        </div>
-      <% end %>
-
-      <%= yield %>
-    </div>
+      <section>
+        <%= yield %>
+      </section>      
+    </main>
   </body>
 </html>

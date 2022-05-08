@@ -14,203 +14,140 @@
  *= require_self
  */
 
- /* tags */
- hr {
-   margin: 1.5em 0;
+/* Geral */
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
- h1 {
-   font-size: 1.5em;
+h1 {
+  font-size: 1.5em;
 }
 
 h2 {
   font-size: 1.2em;
 }
 
-/* General Purpose  */
-.d-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.margin-x {
-  margin: 0 .5em;
-}
-
-.margin-r {
-  margin-right: .5em;
-}
-
-.margin-y {
-  margin: 2em 0;
-}
-
-/* NAVBAR */
-.navbar {
-  text-transform: uppercase;
-  background-color: #222;
-  width: 100%;
-  padding: 1em;
-  color: white;
-}
-
-.title {
-  font-weight: bold;
+a {
   text-decoration: none;
-  color: white;
+  color: #ececec;
 }
 
-.description {
-  color: #ea4f4c;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: white;
-
-  transition: color .3s ease-in .1s;
-}
-
-.nav-link:hover {
-  color: #ea4f4c;
-}
-
-/* Tasks */
 .container {
-  margin: 2em auto 0 auto;
   width: 50%;
+  margin: 2em auto;
 }
 
-.tasks-title {
+.center-text {
   text-align: center;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background-color: #142d4c;
+  color: #ececec;
   padding: 1em;
 }
 
-.tasks {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;
+/* flash messages */
+.flashmessage {
+  border: #142d4c solid 1px;
+  text-align: center;
+  width: 100%;
+  padding: .5em;
 }
 
-.tasks .completed {
-  grid-column-start: 0;
-  grid-row-start: 0;
-}
-
-.tasks .uncompleted {
-  grid-column-start: 1;
-  grid-row-start: 0;
-
-}
-
-/* Task form */
-.form {
-  justify-content: space-around;
-}
-
-.text-field {
-  width: 30em;
-  outline: none;
-  font-size: 1em;
-  height: 1.5em;
-  border: none;
-  border-bottom: 1px solid;
-  line-height: 1.5em;
-  border-color:  #222;
-
-  transition: all .3s ease-in .1s;
-}
-
-.text-field:focus {
-  border-color: #ea4f4c;
-}
-
-.create-btn {
-  font-size: 1em;
-  padding: .3em;
-  background-color: white;
-  cursor: pointer;
-  border: 2px solid #222;
-
-  transition: all .3s ease-in .1s;
-}
-
-.create-btn:hover {
-  background-color: #222;
-  color: white;
-}
-
-/* Task display */
-.task {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: .5em 1em;
-}
-
-.actions {
-  display: inherit;
-}
-
-.complete-btn {
-  font-size: 1em;
-  padding: .3em;
-  background-color: white;
-  color: #222;
-  border: 2px solid #222;
-  cursor: pointer;
-
-  transition: all .3s ease-in;
-}
-
-.complete-btn:hover {
-  background-color: #2ecc71;
-  border-color: #27ae60;
-  color: white;
-}
-
-.destroy-btn {
-  font-size: 1em;
-  padding: .3em;
-  background-color: white;
-  color: #222;
-  border: 2px solid #222;
-  cursor: pointer;
-
-  transition: all .3s ease-in;
-}
-
-.destroy-btn:hover {
-  background-color: #e74c3c;
-  border-color: #c0392b;
-  color: white;
-}
-
-/* Home and About */
-
-.info {
-  height: 150px;
-  margin: 0 auto;
-  width: 70%;
-  padding: 2em;
-  color: white;
-  background-color: #222;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
-}
-
-.flash-message {
-  color: white;
-  padding: 1em;
+.alert {
+  background-color: #ff6857;
 }
 
 .notice {
   background-color: #27ae60;
 }
 
-.alert {
-  background-color: #c0392b;
+.info {
+  background-color: #3498db;
 }
 
-.no-tasks {
-  background-color: #2980b9;
+/* Card */
+.card {
+  border: solid black 1px;
+  padding: 0 1em;
+}
+
+.card-header {
+  padding: 1em 0;
+  text-align: center;
+  border-bottom: #142d4c solid 1px;
+}
+
+.card-body {
+  padding: 1em 0;
+}
+
+/* Forms */
+.field {
+  outline: 0;
+  border: 0;
+  border-bottom: solid #ececec 1px;
+  background-color: none;
+
+  width: 25em;
+  font-size: 1em;
+}
+
+.field:focus {
+  border-bottom: solid #142d4c 1px;
+}
+
+/* Buttons */
+.button {
+  padding: .5em;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: all .35s;
+}
+
+.btn-header {
+  color: #ececec;
+  border: #ececec solid 1px;
+}
+
+.btn-header:hover {
+  background-color: #ececec;
+  color: #142d4c;
+}
+
+.btn-create {
+  color: #142d4c;
+  border: #27ae60 solid 1px;
+}
+
+.btn-create:hover {
+  background-color: #2ecc71;
+}
+
+.btn-destroy {
+  color: #142d4c;
+  border: #e74c3c solid 1px;
+}
+
+.btn-destroy:hover {
+  background-color: #e74c3c;
+  color: #ececec;
+}
+
+/* Tasks */
+.tasks {
+  width: 40%;
+}
+
+.task {
+  padding: .5em;
+}
+
+.task:hover {
+  background-color: #e8e8e8;
 }

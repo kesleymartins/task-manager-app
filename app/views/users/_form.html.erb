@@ -1,19 +1,11 @@
-<div class="form d-row">
-  <%= form_with(model: @user) do |form| %>
-    <div>
-      <%= form.text_field :email, placeholder: :email, class: "text-field" %>
-    </div>
+<%= form_with(model: @user, class: 'flex fd-row jc-around') do |form| %>
+  <div class="flex fd-col">
+    <%= form.text_field :email, placeholder: :email, class: "field my-1" %>
+    <%= form.password_field :password, placeholder: :password, class: "field my-1" %>
+    <%= form.password_field :password_confirmation, placeholder: :password_confirmation, class: "field my-1" %>
+  </div>
 
-    <div>
-      <%= form.password_field :password, placeholder: :password, class: "text-field" %>
-    </div>
-
-    <div>
-      <%= form.password_field :password_confirmation, placeholder: :password_confirmation, class: "text-field" %>
-    </div>
-
-    <div>
-      <%= form.submit "Create account", class: 'create-btn margin-x' %>
-    </div>
-  <% end %>
-</div>
+  <div class="als-end">
+    <%= form.submit "Create account", class: 'button btn-create' %>
+  </div>
+<% end %>

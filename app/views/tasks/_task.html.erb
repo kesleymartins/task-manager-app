@@ -1,7 +1,8 @@
-<li class="task">
-  <%= task.title %>
-  <section class="actions">
-    <%= button_to 'complete', complete_task_path(task), method: :put, class: 'complete-btn margin-x'  unless task.done %>
-    <%= button_to 'destroy', task_path(task), method: :delete, class: 'destroy-btn margin-x' %>
+<li class="task flex fd-row jc-between ali-center">
+  <span><%= task.title %></span>
+  
+  <section class="flex fd-row ">
+    <%= button_to 'complete', complete_task_path(task), method: :put, class: 'button btn-create mx-1' unless task.done %>
+    <%= button_to 'destroy', task_path(task), method: :delete, class: 'button btn-destroy mx-1' %>
   </section>
 </li>

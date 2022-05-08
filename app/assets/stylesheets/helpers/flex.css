@@ -1,0 +1,31 @@
+.flex {
+  display: flex;
+}
+
+.fd-row {
+  flex-direction: row;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+.jc-around {
+  justify-content: space-around;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.ali-center {
+  align-items: center;
+}
+
+.als-end {
+  align-self: flex-end;
+}

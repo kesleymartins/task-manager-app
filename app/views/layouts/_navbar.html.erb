@@ -1,23 +1,24 @@
-<nav class="navbar d-row">
-  <div>
-    <%= link_to 'Task Manager', root_path, class: 'title' %>
-    <span class="description margin-r">App</span>
-  </div>
-  <div class="d-row">
-      <ul class="d-row">
-        <% if current_user %>
-          <li><%= link_to "Tasks", tasks_path, class: 'nav-link margin-x' %></li>
-        <% end %>
-        <li><%= link_to "About", about_path, class: 'nav-link margin-x' %></li>
-      </ul>
-      <ul class="d-row">
-        <% if current_user %>
-          <li><%= current_user.email %></li>
-          <li><%= button_to 'Log out', logout_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Create account", new_user_path, class: 'nav-link' %></li>
-          <li><%= link_to "Log in", login_path, class: 'nav-link' %></li>
-        <% end %>
-      </ul>
-  </div>
+<nav>
+  <ul class="flex fd-row jc-around ali-center">
+    <section class="flex fd-row">
+      <li class="mx-1"><%= link_to 'Task Manager App', root_path %></li>
+      <li class="mx-1"><%= link_to "About", about_path %></li>
+    </section>
+
+    <% if current_user %>
+      <section>
+        <li class="mx-1"><%= link_to "Tasks", tasks_path %></li>
+      </section>
+    <% end %>
+
+    <section class="flex fd-row ali-center">
+      <% if current_user %>
+        <li class="mx-1"><%= current_user.email %></li>
+        <li class="mx-1"><%= button_to 'Log out', logout_path, method: :delete, class: 'button btn-header' %></li>
+      <% else %>
+        <li class="mx-1"><%= link_to "Sign up", new_user_path, class: 'button btn-header' %></li>
+        <li class="mx-1"><%= link_to "Log in", login_path, class: 'button btn-header' %></li>
+      <% end %>
+    </section>
+  </ul>
 </nav>

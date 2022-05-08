@@ -1,31 +1,41 @@
-<h1 class="tasks-title">Create a new Task</h1>
-<%= render 'form' %>
-<hr />
+<div class="card">
+  <section class="card-header">
+    <h1 class="mb-1">Create a new Task</h1>
+    <%= render 'form' %>
+  </section>
 
-<h1 class="tasks-title">Your Tasks</h1>
+  <section class="card-body flex fd-row jc-between">
+    <div class="tasks">
+      <h2 class="center-text mb-1">Uncompleted</h2>
 
-<% if @uncompleted_tasks.empty? && @completed_tasks.empty? %>
-  <div class="flash-message no-tasks">
-    You do not have any task yet
-  </div>
-<% else %>
-  <div class="tasks">
-    <section class="uncompleted">
-      <h2 class="tasks-title">Uncompleted</h2>
-      <ul>
-        <% @uncompleted_tasks.each do |task| %>
-          <%= render 'task', task: task %>
-        <% end %>
-      </ul>
-    </section>
+      <% unless @uncompleted_tasks.empty? %>
+        <ul>
+          <% @uncompleted_tasks.each do |task| %>
+            <%= render 'task', task: task %>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="flashmessage info">
+          yout do not have any uncompleted task
+        </div>
+      <% end %>
+    </div>
 
-    <section class="completed">
-      <h2 class="tasks-title">Completed</h2>
-      <ul>
-        <% @completed_tasks.each do |task| %>
-          <%= render 'task', task: task %>
-        <% end %>
-      </ul>
-    </section>
-  </div>
-<% end %>
+    <div class="tasks">
+      <h2 class="center-text mb-1">Completed</h2>
+      
+      <% unless @completed_tasks.empty? %>
+        <ul>
+          <% @completed_tasks.each do |task| %>
+            <%= render 'task', task: task %>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="flashmessage info">
+          yout do not have any completed task
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>
+
