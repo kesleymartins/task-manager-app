@@ -32,6 +32,10 @@ a {
   color: #ececec;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .container {
   width: 50%;
   margin: 2em auto;
@@ -52,7 +56,6 @@ header {
 /* flash messages */
 .flashmessage {
   border: #142d4c solid 1px;
-  text-align: center;
   width: 100%;
   padding: .5em;
 }

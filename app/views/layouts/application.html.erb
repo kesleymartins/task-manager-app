@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" %>
     <%= stylesheet_link_tag "application" %>  
     <%= stylesheet_link_tag "helpers/margin" %>  
     <%= stylesheet_link_tag "helpers/flex" %>
@@ -21,11 +22,17 @@
     <main class="container">
       <section>
         <% if flash.notice %>
-          <div class="flashmessage notice mb-1"><%= flash.notice %></div>
+          <div class="flashmessage notice mb-1 flex fd-row jc-between">
+            <%= flash.notice %>
+            <i class="bi bi-x-lg pointer"></i>
+          </div>
         <% end %>
 
         <% if flash.alert %>
-          <div class="flashmessage alert mb-1"><%= flash.alert %></div>
+          <div class="flashmessage alert mb-1 flex fd-row jc-between">
+            <%= flash.alert %>
+            <i class="bi bi-x-lg pointer"></i>
+          </div>
         <% end %>
       </section>
 
