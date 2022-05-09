@@ -20,18 +20,18 @@
     </header>
 
     <main class="container">
-      <section>
+      <section data-controller="flashmessage">
         <% if flash.notice %>
-          <div class="flashmessage notice mb-1 flex fd-row jc-between">
+          <div class="flashmessage notice mb-1 flex fd-row jc-between" >
             <%= flash.notice %>
-            <i class="bi bi-x-lg pointer"></i>
+            <i data-action="click->flashmessage#close" class="bi bi-x-lg pointer"></i>
           </div>
         <% end %>
 
         <% if flash.alert %>
-          <div class="flashmessage alert mb-1 flex fd-row jc-between">
+          <div  class="flashmessage alert mb-1 flex fd-row jc-between">
             <%= flash.alert %>
-            <i class="bi bi-x-lg pointer"></i>
+            <i data-action="click->flashmessage#close" class="bi bi-x-lg pointer"></i>
           </div>
         <% end %>
       </section>
