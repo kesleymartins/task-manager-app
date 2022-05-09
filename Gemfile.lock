@@ -83,6 +83,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.0.3)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -170,6 +173,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    stimulus-rails (1.0.4)
+      railties (>= 6.0.0)
     strscan (3.0.1)
     thor (1.2.1)
     timeout (0.2.0)
@@ -185,11 +190,13 @@ PLATFORMS
 
 DEPENDENCIES
   debug
+  importmap-rails (~> 1.0, >= 1.0.3)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.4)
   sorcery (~> 0.16.3)
   sprockets-rails
   sqlite3 (~> 1.4)
+  stimulus-rails (~> 1.0, >= 1.0.4)
   tzinfo-data
 
 RUBY VERSION
