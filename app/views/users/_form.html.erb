@@ -1,19 +1,19 @@
-<%= form_with(model: @user, class: 'flex fd-row jc-around') do |form| %>
+<%= form_with(model: @user) do |form| %>
   <div>
     <% @user.errors.each do |error| %>
-      <div class="flashmessage alert">
+      <div>
         <%= error.full_message %>
       </div>
     <% end %>
   </div>
 
-  <div class="flex fd-col">
-    <%= form.text_field :email, placeholder: :email, class: "field my-1" %>
-    <%= form.password_field :password, placeholder: :password, class: "field my-1" %>
-    <%= form.password_field :password_confirmation, placeholder: :password_confirmation, class: "field my-1" %>
+  <div>
+    <%= form.text_field :email, placeholder: :email %>
+    <%= form.password_field :password, placeholder: :password %>
+    <%= form.password_field :password_confirmation, placeholder: :password_confirmation %>
   </div>
 
-  <div class="als-end">
-    <%= form.submit "Create account", class: 'button btn-create' %>
+  <div>
+    <%= form.submit "Create account" %>
   </div>
 <% end %>

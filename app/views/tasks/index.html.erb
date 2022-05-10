@@ -1,12 +1,12 @@
-<div class="card">
-  <section class="card-header">
-    <h1 class="mb-1">Create a new Task</h1>
+<div>
+  <section>
+    <h1>Create a new Task</h1>
     <%= render 'form' %>
   </section>
 
-  <section class="card-body flex fd-row jc-between">
-    <div class="tasks">
-      <h2 class="center-text mb-1">Uncompleted</h2>
+  <section>
+    <div>
+      <h2>Uncompleted</h2>
 
       <% unless @uncompleted_tasks.empty? %>
         <ul>
@@ -15,14 +15,14 @@
           <% end %>
         </ul>
       <% else %>
-        <div class="flashmessage info">
+        <div>
           yout do not have any uncompleted task
         </div>
       <% end %>
     </div>
 
-    <div class="tasks">
-      <h2 class="center-text mb-1">Completed</h2>
+    <div>
+      <h2>Completed</h2>
       
       <% unless @completed_tasks.empty? %>
         <ul>
@@ -31,7 +31,7 @@
           <% end %>
         </ul>
       <% else %>
-        <div class="flashmessage info">
+        <div>
           yout do not have any completed task
         </div>
       <% end %>

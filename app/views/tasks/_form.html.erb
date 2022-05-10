@@ -1,5 +1,5 @@
-<%= form_with(model: Task.new, class: "flex fd-row jc-center") do |f| %>
-  <%= f.text_field :title, placeholder: 'Task name', class: "field" %>
+<%= form_with(model: Task.new) do |f| %>
+  <%= f.text_field :title, placeholder: 'Task name' %>
 
-  <%= f.submit 'Create Task', class: 'button btn-create ml-1' %>
+  <%= f.submit 'Create Task' %>
 <% end %>

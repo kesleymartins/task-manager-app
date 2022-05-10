@@ -6,11 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css" %>
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" %>
-    <%= stylesheet_link_tag "application" %>  
-    <%= stylesheet_link_tag "helpers/margin" %>  
-    <%= stylesheet_link_tag "helpers/flex" %>
     <%= javascript_importmap_tags %>  
   </head>
 
@@ -19,19 +15,19 @@
       <%= render 'layouts/navbar' %>
     </header>
 
-    <main class="container">
+    <main>
       <section data-controller="flashmessage">
         <% if flash.notice %>
-          <div class="flashmessage notice mb-1 flex fd-row jc-between" >
+          <div>
             <%= flash.notice %>
-            <i data-action="click->flashmessage#close" class="bi bi-x-lg pointer"></i>
+            <i data-action="click->flashmessage#close"></i>
           </div>
         <% end %>
 
         <% if flash.alert %>
-          <div  class="flashmessage alert mb-1 flex fd-row jc-between">
+          <div>
             <%= flash.alert %>
-            <i data-action="click->flashmessage#close" class="bi bi-x-lg pointer"></i>
+            <i data-action="click->flashmessage#close"></i>
           </div>
         <% end %>
       </section>

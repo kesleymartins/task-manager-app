@@ -1,23 +1,23 @@
 <nav>
-  <ul class="flex fd-row jc-around ali-center">
-    <section class="flex fd-row">
-      <li class="mx-1"><%= link_to 'Task Manager App', root_path %></li>
-      <li class="mx-1"><%= link_to "About", about_path %></li>
+  <ul>
+    <section>
+      <li><%= link_to 'Task Manager App', root_path %></li>
+      <li><%= link_to "About", about_path %></li>
     </section>
 
     <% if current_user %>
       <section>
-        <li class="mx-1"><%= link_to "Tasks", tasks_path %></li>
+        <li><%= link_to "Tasks", tasks_path %></li>
       </section>
     <% end %>
 
-    <section class="flex fd-row ali-center">
+    <section>
       <% if current_user %>
-        <li class="mx-1"><%= current_user.email %></li>
-        <li class="mx-1"><%= button_to 'Log out', logout_path, method: :delete, class: 'button btn-header' %></li>
+        <li><%= current_user.email %></li>
+        <li><%= button_to 'Log out', logout_path, method: :delete %></li>
       <% else %>
-        <li class="mx-1"><%= link_to "Sign up", new_user_path, class: 'button btn-header' %></li>
-        <li class="mx-1"><%= link_to "Log in", login_path, class: 'button btn-header' %></li>
+        <li><%= link_to "Sign up", new_user_path %></li>
+        <li><%= link_to "Log in", login_path %></li>
       <% end %>
     </section>
   </ul>
