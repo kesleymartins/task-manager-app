@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @session_status
       redirect_to tasks_path, notice: 'You have logged in successfully'
     else
-      render :new, alert: 'Login Failed'
+      redirect_to login_path, alert: 'Login Failed T-T'
     end
   end
 

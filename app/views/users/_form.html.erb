@@ -1,4 +1,12 @@
 <%= form_with(model: @user, class: 'flex fd-row jc-around') do |form| %>
+  <div>
+    <% @user.errors.each do |error| %>
+      <div class="flashmessage alert">
+        <%= error.full_message %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="flex fd-col">
     <%= form.text_field :email, placeholder: :email, class: "field my-1" %>
     <%= form.password_field :password, placeholder: :password, class: "field my-1" %>

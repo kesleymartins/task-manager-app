@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to tasks_path, notice: 'Account created successfuly'
     else
-      render :new, alert: 'Account not created'
+      render :new, status: :unprocessable_entity
     end
   end
 
