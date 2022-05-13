@@ -1,19 +1,21 @@
-<%= form_with(model: @user) do |form| %>
-  <div>
-    <% @user.errors.each do |error| %>
-      <div>
-        <%= error.full_message %>
-      </div>
-    <% end %>
-  </div>
+<%= form_with(model: @user, class: "is-flex is-flex-direction-column") do |form| %>
+  <% if @user.errors.any? %>
+    <div class="notification is-danger">
+      <% @user.errors.each do |error| %>
+        <div>
+          <%= error.full_message %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <div>
-    <%= form.text_field :email, placeholder: :email %>
-    <%= form.password_field :password, placeholder: :password %>
-    <%= form.password_field :password_confirmation, placeholder: :password_confirmation %>
+    <%= form.text_field :email, placeholder: :email, class: "input my-1" %>
+    <%= form.password_field :password, placeholder: :password, class: "input my-1" %>
+    <%= form.password_field :password_confirmation, placeholder: :password_confirmation, class: "input my-1" %>
   </div>
 
-  <div>
-    <%= form.submit "Create account" %>
+  <div class="is-align-self-flex-end">
+    <%= form.submit "Create account", class: 'button is-primary mt-3' %>
   </div>
 <% end %>

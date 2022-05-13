@@ -1,8 +1,8 @@
-<li>
+<li class="is-flex is-justify-content-space-between my-2">
   <span><%= task.title %></span>
   
-  <section>
-    <%= button_to 'complete', complete_task_path(task), method: :put unless task.done %>
-    <%= button_to 'destroy', task_path(task), method: :delete %>
+  <section class="is-flex">
+    <%= button_to 'complete', complete_task_path(task), method: :put, class: 'button is-primary is-small is-outlined mr-1' unless task.done %>
+    <%= button_to 'destroy', task_path(task), method: :delete, class: 'button is-danger is-small is-outlined ml-1' %>
   </section>
 </li>

@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" %>
     <%= javascript_importmap_tags %>  
   </head>
 
@@ -15,24 +16,26 @@
       <%= render 'layouts/navbar' %>
     </header>
 
-    <main>
-      <section data-controller="flashmessage">
-        <% if flash.notice %>
-          <div>
-            <%= flash.notice %>
-            <i data-action="click->flashmessage#close"></i>
-          </div>
-        <% end %>
+    <main class="container">
+      <% unless flash.empty? %>
+        <section class="section" data-controller="flashmessage">
+          <% if flash.notice %>
+            <div class="notification is-primary">
+              <button class="delete" data-action="click->flashmessage#close"></button>
+              <%= flash.notice %>
+            </div>
+          <% end %>
 
-        <% if flash.alert %>
-          <div>
-            <%= flash.alert %>
-            <i data-action="click->flashmessage#close"></i>
-          </div>
-        <% end %>
-      </section>
+          <% if flash.alert %>
+            <div class="notification is-danger">
+              <button class="delete" data-action="click->flashmessage#close"></button>
+              <%= flash.alert %>
+            </div>
+          <% end %>
+        </section>
+      <% end %>
 
-      <section>
+      <section class="section">
         <%= yield %>
       </section>      
     </main>

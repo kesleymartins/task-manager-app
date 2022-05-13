@@ -1,12 +1,12 @@
-<div>
-  <section>
-    <h1>Create a new Task</h1>
+<div class="card">
+  <section class="card-header is-flex-direction-column is-align-items-center py-4">
+    <h3 class="subtitle is-3">Create a new Task</h3>
     <%= render 'form' %>
   </section>
 
-  <section>
-    <div>
-      <h2>Uncompleted</h2>
+  <section class="card-content columns">
+    <div class="column">
+      <h4 class="subtitle is-4 has-text-centered">Uncompleted</h4>
 
       <% unless @uncompleted_tasks.empty? %>
         <ul>
@@ -15,14 +15,14 @@
           <% end %>
         </ul>
       <% else %>
-        <div>
+        <div class="notification">
           yout do not have any uncompleted task
         </div>
       <% end %>
     </div>
 
-    <div>
-      <h2>Completed</h2>
+    <div class="column">
+      <h4 class="subtitle is-4 has-text-centered">Completed</h4>
       
       <% unless @completed_tasks.empty? %>
         <ul>
@@ -31,7 +31,7 @@
           <% end %>
         </ul>
       <% else %>
-        <div>
+        <div class="notification is-blue">
           yout do not have any completed task
         </div>
       <% end %>

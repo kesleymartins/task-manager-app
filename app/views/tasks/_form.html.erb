@@ -1,5 +1,5 @@
-<%= form_with(model: Task.new) do |f| %>
-  <%= f.text_field :title, placeholder: 'Task name' %>
+<%= form_with(model: Task.new, class: 'is-flex is-flex-direction-row') do |f| %>
+  <%= f.text_field :title, placeholder: 'Task name', autocomplete: :off, class: 'input' %>
 
-  <%= f.submit 'Create Task' %>
+  <%= f.submit 'Create Task', class: 'button is-primary ml-3' %>
 <% end %>

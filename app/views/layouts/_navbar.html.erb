@@ -1,24 +1,28 @@
-<nav>
-  <ul>
-    <section>
-      <li><%= link_to 'Task Manager App', root_path %></li>
-      <li><%= link_to "About", about_path %></li>
-    </section>
+<nav class="navbar is-flex is-flex-direction-row is-justify-content-space-around is-align-items-center">
+  <section>
+    <ul class="is-flex is-align-items-center">
+      <li><%= link_to 'Task Manager App', root_path, class: 'navbar-item title' %></li>
+      <li><%= link_to "About", about_path, class: 'navbar-item' %></li>
+    </ul>
+  </section>
 
+  <section>
     <% if current_user %>
-      <section>
-        <li><%= link_to "Tasks", tasks_path %></li>
-      </section>
+      <ul class="is-flex is-flex-direction-row is-align-items-center">
+        <li><%= link_to "Tasks", tasks_path, class: 'navbar-item' %></li>
+      </ul>
     <% end %>
+  </section>
 
-    <section>
+  <section>
+    <ul class="is-flex is-flex-direction-row is-align-items-center">
       <% if current_user %>
-        <li><%= current_user.email %></li>
-        <li><%= button_to 'Log out', logout_path, method: :delete %></li>
+        <li class="navbar-item"><%= current_user.email %></li>
+        <li><%= button_to 'Log out', logout_path, method: :delete, class: 'button is-danger is-small' %></li>
       <% else %>
-        <li><%= link_to "Sign up", new_user_path %></li>
-        <li><%= link_to "Log in", login_path %></li>
+        <li><%= link_to "Sign up", new_user_path, class: 'button is-link is-small mx-1' %></li>
+        <li><%= link_to "Log in", login_path, class: 'button is-primary is-small mx-1' %></li>
       <% end %>
-    </section>
-  </ul>
+    </ul>
+  </section>
 </nav>

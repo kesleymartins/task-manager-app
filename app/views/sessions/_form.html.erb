@@ -1,10 +1,10 @@
-<%= form_with(url: login_user_path, method: :post) do |form| %>
+<%= form_with(url: login_user_path, method: :post, class: 'is-flex is-flex-direction-column') do |form| %>
   <div>
-    <%= form.text_field :email, placeholder: :email %>
-    <%= form.password_field :password, placeholder: :password %>
+    <%= form.text_field :email, placeholder: :email, class: 'input my-1' %>
+    <%= form.password_field :password, placeholder: :password, class: 'input my-1' %>
   </div>
 
-  <div>
-    <%= form.submit "Login" %>
+  <div class="is-align-self-flex-end">
+    <%= form.submit "Login", class: 'button is-primary mt-3' %>
   </div>
 <% end %>
